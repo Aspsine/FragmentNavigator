@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
 
     private FragmentNavigator mNavigator;
 
+    // a simple custom bottom navigation view
     private BottomNavigatorView bottomNavigatorView;
 
     @Override
@@ -22,14 +23,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // new a FragmentNavigator instance
         mNavigator = new FragmentNavigator(getSupportFragmentManager(), new FragmentAdapter(), R.id.container);
+        // set default tab position
         mNavigator.setDefaultPosition(DEFAULT_POSITION);
         mNavigator.onCreate(savedInstanceState);
 
         bottomNavigatorView = (BottomNavigatorView) findViewById(R.id.bottomNavigatorView);
-        if (bottomNavigatorView != null) {
-            bottomNavigatorView.setOnBottomNavigatorViewItemClickListener(this);
-        }
+        bottomNavigatorView.setOnBottomNavigatorViewItemClickListener(this);
 
         setCurrentTab(mNavigator.getCurrentPosition());
     }
@@ -70,6 +71,7 @@ public class FragmentAdapter implements FragmentNavigatorAdapter {
 
     @Override
     public String getTag(int position) {
+        // an simple unique tag
         return MainFragment.TAG + TABS[position];
     }
 
