@@ -5,25 +5,19 @@ import android.support.v4.app.Fragment;
 import com.aspsine.fragmentnavigator.FragmentNavigatorAdapter;
 
 /**
- * Created by aspsine on 16/3/31.
+ * Created by aspsine on 16/4/3.
  */
-public class FragmentAdapter implements FragmentNavigatorAdapter {
+public class ChildFragmentAdapter implements FragmentNavigatorAdapter {
 
-    private static final String TABS[] = {"Chat", "Friends", "Circle", "Me"};
+    public static final String[] TABS = {"Friends", "Groups"};
 
     @Override
     public Fragment onCreateFragment(int position) {
-        if (position == 1){
-            return ContactsFragment.newInstance(position);
-        }
         return MainFragment.newInstance(TABS[position]);
     }
 
     @Override
     public String getTag(int position) {
-        if (position == 1) {
-            return ContactsFragment.TAG;
-        }
         return MainFragment.TAG + TABS[position];
     }
 

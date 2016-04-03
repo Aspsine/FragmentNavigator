@@ -1,10 +1,9 @@
 package com.aspsine.fragmentnavigator.demo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class ExceptionActivity extends AppCompatActivity {
 
@@ -15,13 +14,11 @@ public class ExceptionActivity extends AppCompatActivity {
 
         final Button button = (Button) findViewById(R.id.btnException);
 
-        final TextView tv = null;
-
         if (button != null) {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    tv.setText("This will crash the app");
+                    throw new RuntimeException("This will crash the app");
                 }
             });
         }

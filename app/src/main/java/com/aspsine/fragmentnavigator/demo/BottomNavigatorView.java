@@ -70,9 +70,9 @@ public class BottomNavigatorView extends LinearLayoutCompat {
                 ImageView iv = (ImageView) child;
                 Drawable drawable = iv.getDrawable().mutate();
                 if (select) {
-                    drawable.setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_ATOP);
+                    drawable.setColorFilter(getResources().getColor(R.color.colorTabSelected), PorterDuff.Mode.SRC_ATOP);
                 } else {
-                    drawable.setColorFilter(getResources().getColor(android.R.color.black), PorterDuff.Mode.SRC_ATOP);
+                    drawable.setColorFilter(getResources().getColor(R.color.colorTabNormal), PorterDuff.Mode.SRC_ATOP);
                 }
             }
         }
