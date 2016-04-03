@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // new a FragmentNavigator instance
         mNavigator = new FragmentNavigator(getSupportFragmentManager(), new FragmentAdapter(), R.id.container);
         // set default tab position
         mNavigator.setDefaultPosition(DEFAULT_POSITION);
@@ -82,7 +81,7 @@ public class FragmentAdapter implements FragmentNavigatorAdapter {
 }
 ```
 
-### Demo:  
+### Usage of Demo App:
 - Step 1: Install demo app and open it, default tab is 'Chats'.
 ![](https://github.com/Aspsine/FragmentNavigator/blob/master/art/screenshot0.png?raw=true)
 
