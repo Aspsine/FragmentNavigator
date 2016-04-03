@@ -5,8 +5,7 @@ An useful fragment navigator helps you control fragments. Support fragments in a
 [Download](https://github.com/Aspsine/FragmentNavigator/blob/master/art/demo.apk?raw=true)
 
 ### How to use
-Step 1. Add the JitPack repository to your build file
-Add it in your root build.gradle at the end of repositories:
+Step 1. Add the JitPack repository to your build file. Add it in your root build.gradle at the end of repositories:
 ```groovy
 allprojects {
     repositories {
@@ -97,7 +96,7 @@ public class FragmentAdapter implements FragmentNavigatorAdapter {
 - Step 1: Install demo app and open it, default tab is 'Chats'.
 ![](https://github.com/Aspsine/FragmentNavigator/blob/master/art/screenshot0.png?raw=true)
 
-- Step 2: Switch bottom tab to 'Contacts', Contacts page contains two child fragments.
+- Step 2: Switch bottom tab to 'Contacts', Contacts page contains three child fragments.
 ![](https://github.com/Aspsine/FragmentNavigator/blob/master/art/screenshot1.png?raw=true)
 
 - Step 3: Switch top tab to 'Groups'
