@@ -66,11 +66,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
         mNavigator.showFragment(position);
         bottomNavigatorView.select(position);
     }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-    }
 }
 ```
 
