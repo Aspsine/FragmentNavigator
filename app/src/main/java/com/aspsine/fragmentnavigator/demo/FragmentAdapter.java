@@ -9,7 +9,7 @@ import com.aspsine.fragmentnavigator.FragmentNavigatorAdapter;
  */
 public class FragmentAdapter implements FragmentNavigatorAdapter {
 
-    private static final String TABS[] = {"Chat", "Friends", "Circle", "Me"};
+    private static final String TABS[] = {"Chats", "Contacts", "Circle", "Me"};
 
     @Override
     public Fragment onCreateFragment(int position) {
