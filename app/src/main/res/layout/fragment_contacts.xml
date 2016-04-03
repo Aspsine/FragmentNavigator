@@ -9,12 +9,9 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:background="@android:color/white"
+        android:elevation="2dp"
         android:layout_height="48dp" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/colorTabNormal" />
 
     <FrameLayout
         android:id="@+id/childContainer"
