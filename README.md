@@ -5,7 +5,24 @@ An useful fragment navigator helps you control fragments. Support fragments in a
 [Download](https://github.com/Aspsine/FragmentNavigator/blob/master/art/demo.apk?raw=true)
 
 ### How to use
-The lib provide `FragmentNavigator` class and `FragmentNavigatorAdapter` interface to help you control fragments. It's very simple to use.
+Step 1. Add the JitPack repository to your build file
+Add it in your root build.gradle at the end of repositories:
+```groovy
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+Step 2. Add the dependency
+```groovy
+dependencies {
+    compile 'com.github.Aspsine:FragmentNavigator:1.0.0'
+}
+```
+
+Step 3. The lib provide `FragmentNavigator` class and `FragmentNavigatorAdapter` interface to help you control fragments. It's very simple to use.
 
 - MainActivity.java
 ```java
