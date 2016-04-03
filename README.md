@@ -1,5 +1,5 @@
 # FragmentNavigator
-An useful fragment navigator helps you control fragments. Support fragments in activity and nested fragments.
+An useful fragment navigator helps you control fragments better and easier. You will not need to worry about the dirty things like switch fragments, fragments overlay, save fragments states and restore fragments states.
 
 ### Demo
 [Download](https://github.com/Aspsine/FragmentNavigator/blob/master/art/demo.apk?raw=true)
