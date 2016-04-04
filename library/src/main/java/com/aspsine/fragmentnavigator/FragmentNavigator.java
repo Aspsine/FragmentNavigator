@@ -21,7 +21,7 @@ public class FragmentNavigator {
     @IdRes
     private int mContainerViewId;
 
-    private int mCurrentPosition;
+    private int mCurrentPosition = -1;
 
     private int mDefaultPosition;
 
@@ -125,5 +125,8 @@ public class FragmentNavigator {
 
     public void setDefaultPosition(int defaultPosition) {
         this.mDefaultPosition = defaultPosition;
+        if (mCurrentPosition == -1) {
+            this.mCurrentPosition = defaultPosition;
+        }
     }
 }
