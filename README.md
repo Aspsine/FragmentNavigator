@@ -1,3 +1,4 @@
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FragmentNavigator-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3396)
 # FragmentNavigator
 An useful fragment navigator helps you control fragments better and easier. You will not need to worry about the dirty things like switch fragments, fragments overlay, save fragments states and restore fragments states. The lib will do them all for you. Fragments in activity and nest Fragment are all supported.
 
