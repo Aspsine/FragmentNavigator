@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:layout_marginTop="16dp"
-        android:text="Click the button below will create a NullPointException to demonstrate the Crash."/>
+        android:text="Click the button below. A RuntimeException will be thrown to demonstrate a Crash."/>
 
     <Button
         android:id="@+id/btnException"

@@ -5,7 +5,6 @@ import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 
 /**
  * Created by aspsine on 16/3/30.
@@ -41,30 +40,96 @@ public class FragmentNavigator {
         outState.putInt(EXTRA_CURRENT_POSITION, mCurrentPosition);
     }
 
-    public void showFragment(int position, boolean notify) {
-        this.mCurrentPosition = position;
-        FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        if (notify) {
-            removeAll(transaction);
-            show(position, transaction);
-            transaction.commitAllowingStateLoss();
-        } else {
-            int count = mAdapter.getCount();
-            for (int i = 0; i < count; i++) {
-                if (position == i) {
-                    show(i, transaction);
-                } else {
-                    hide(i, transaction);
-                }
-            }
-            transaction.commit();
-        }
-    }
-
+    /**
+     * @see #showFragment(int, boolean)
+     */
     public void showFragment(int position) {
         showFragment(position, false);
     }
 
+    /**
+     * @see #showFragment(int, boolean, boolean)
+     */
+    public void showFragment(int position, boolean reset) {
+        showFragment(position, reset, false);
+    }
+
+    /**
+     * Show fragment at given position
+     *
+     * @param position fragment position
+     * @param reset true if fragment in given position need reset otherwise false
+     * @param allowingStateLoss true if allowing state loss otherwise false
+     */
+    public void showFragment(int position, boolean reset, boolean allowingStateLoss) {
+        this.mCurrentPosition = position;
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        int count = mAdapter.getCount();
+        for (int i = 0; i < count; i++) {
+            if (position == i) {
+                if (reset) {
+                    remove(position, transaction);
+                    add(position, transaction);
+                } else {
+                    show(i, transaction);
+                }
+            } else {
+                hide(i, transaction);
+            }
+        }
+        if (allowingStateLoss) {
+            transaction.commitAllowingStateLoss();
+        } else {
+            transaction.commit();
+        }
+    }
+
+    /**
+     * reset all the fragments and show current fragment
+     *
+     * @see #resetFragments(int)
+     */
+    public void resetFragments() {
+        resetFragments(mCurrentPosition);
+    }
+
+    /**
+     * @see #resetFragments(int, boolean)
+     */
+    public void resetFragments(int position) {
+        resetFragments(position, false);
+    }
+
+    /**
+     * reset all the fragment and show given position fragment
+     *
+     * @param position fragment position
+     * @param allowingStateLoss true if allowing state loss otherwise false
+     */
+    public void resetFragments(int position, boolean allowingStateLoss) {
+        this.mCurrentPosition = position;
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        removeAll(transaction);
+        add(position, transaction);
+        if (allowingStateLoss) {
+            transaction.commitAllowingStateLoss();
+        } else {
+            transaction.commit();
+        }
+    }
+
+    /**
+     * @see #removeAllFragment(boolean)
+     */
+    public void removeAllFragment() {
+        removeAllFragment(false);
+    }
+
+    /**
+     * remove all fragment in the {@link FragmentManager}
+     *
+     * @param allowingStateLoss true if allowing state loss otherwise false
+     */
     public void removeAllFragment(boolean allowingStateLoss) {
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         removeAll(transaction);
@@ -75,12 +140,32 @@ public class FragmentNavigator {
         }
     }
 
+    /**
+     * @return current showing fragment's position
+     */
     public int getCurrentPosition() {
         return mCurrentPosition;
     }
 
+    /**
+     * Also @see #getFragment(int)
+     *
+     * @return current position fragment
+     */
     public Fragment getCurrentFragment() {
-        String tag = mAdapter.getTag(mCurrentPosition);
+        return getFragment(mCurrentPosition);
+    }
+
+    /**
+     * Get the fragment has been added in the given position. Return null if the fragment
+     * hasn't been added in {@link FragmentManager} or has been removed already.
+     *
+     * @param position position of fragment in {@link FragmentNavigatorAdapter#onCreateFragment(int)}}
+     *                 and {@link FragmentNavigatorAdapter#getTag(int)}
+     * @return The fragment if found or null otherwise.
+     */
+    public Fragment getFragment(int position) {
+        String tag = mAdapter.getTag(position);
         return mFragmentManager.findFragmentByTag(tag);
     }
 
