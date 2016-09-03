@@ -1,10 +1,12 @@
-package com.aspsine.fragmentnavigator.demo;
+package com.aspsine.fragmentnavigator.demo.ui.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
+import com.aspsine.fragmentnavigator.demo.R;
 
 /**
  * Created by aspsine on 16/4/1.

@@ -1,4 +1,4 @@
-package com.aspsine.fragmentnavigator.demo;
+package com.aspsine.fragmentnavigator.demo.ui.fragment;
 
 
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.aspsine.fragmentnavigator.demo.R;
+import com.aspsine.fragmentnavigator.demo.utils.SharedPrefUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -70,7 +73,18 @@ public class MainFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        loadData();
+        if (savedInstanceState == null) {
+            loadData();
+        } else {
+            mText = savedInstanceState.getString(EXTRA_TEXT);
+            bindData();
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(EXTRA_TEXT, mText);
     }
 
     @Override
@@ -86,7 +100,8 @@ public class MainFragment extends Fragment {
     }
 
     private void bindData() {
-        tvText.setText(mText);
+        boolean isLogin = SharedPrefUtils.isLogin(getActivity());
+        tvText.setText(mText + "\n" + "Login:" + isLogin);
     }
 
     /**

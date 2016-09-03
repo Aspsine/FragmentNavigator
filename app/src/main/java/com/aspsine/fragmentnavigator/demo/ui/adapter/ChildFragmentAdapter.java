@@ -1,8 +1,9 @@
-package com.aspsine.fragmentnavigator.demo;
+package com.aspsine.fragmentnavigator.demo.ui.adapter;
 
 import android.support.v4.app.Fragment;
 
 import com.aspsine.fragmentnavigator.FragmentNavigatorAdapter;
+import com.aspsine.fragmentnavigator.demo.ui.fragment.MainFragment;
 
 /**
  * Created by aspsine on 16/4/3.

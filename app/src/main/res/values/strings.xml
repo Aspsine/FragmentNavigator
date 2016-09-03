@@ -5,4 +5,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="action_exception">Exception</string>
+
+    <!-- Strings related to login -->
+    <string name="title_activity_login">Log in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_log_in">Log in</string>
+    <string name="action_log_out">Log out</string>
+    <string name="prompt_login_success">Welcome</string>
+    <string name="error_invalid_email">email is empty</string>
+    <string name="error_invalid_password">password is empty</string>
+
 </resources>

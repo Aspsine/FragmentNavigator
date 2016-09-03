@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ContactsFragment">
+    tools:context=".ui.fragment.ContactsFragment">
 
-    <com.aspsine.fragmentnavigator.demo.TabLayout
+    <com.aspsine.fragmentnavigator.demo.ui.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:background="@android:color/white"

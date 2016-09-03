@@ -1,4 +1,4 @@
-package com.aspsine.fragmentnavigator.demo;
+package com.aspsine.fragmentnavigator.demo.ui.fragment;
 
 
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.aspsine.fragmentnavigator.FragmentNavigator;
+import com.aspsine.fragmentnavigator.demo.R;
+import com.aspsine.fragmentnavigator.demo.ui.widget.TabLayout;
+import com.aspsine.fragmentnavigator.demo.ui.adapter.ChildFragmentAdapter;
 
 
 /**
@@ -57,7 +60,6 @@ public class ContactsFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setCurrentTab(mNavigator.getCurrentPosition());
-        Log.i(TAG, "onActivityCreated");
     }
 
     @Override
