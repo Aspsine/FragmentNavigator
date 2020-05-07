@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 29
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.aspsine.fragmentnavigator.demo"
-        minSdkVersion 11
-        targetSdkVersion 24
-        versionCode 3
-        versionName "3.0"
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 4
+        versionName "4.0"
     }
     buildTypes {
         release {
@@ -23,10 +23,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':library')
-//    compile 'com.github.Aspsine:FragmentNavigator:1.0.2'
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.android.support:design:24.2.0'
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':library')
+    //implementation 'com.github.Aspsine:FragmentNavigator:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 }

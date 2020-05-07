@@ -1,6 +1,6 @@
 package com.aspsine.fragmentnavigator;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by aspsine on 16/3/30.

@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 29
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
-        minSdkVersion 10
-        targetSdkVersion 24
-        versionCode 3
-        versionName "1.0.2"
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 4
+        versionName "1.0.4"
     }
     buildTypes {
         release {
@@ -19,7 +19,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:support-fragment:24.2.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.fragment:fragment:1.2.4'
 }
