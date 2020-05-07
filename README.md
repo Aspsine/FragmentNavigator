@@ -18,7 +18,7 @@ allprojects {
 Step 2. Add the dependency
 ```groovy
 dependencies {
-    compile 'com.github.Aspsine:FragmentNavigator:1.0.2'
+    compile 'com.github.Aspsine:FragmentNavigator:1.0.4'
 }
 ```
 
